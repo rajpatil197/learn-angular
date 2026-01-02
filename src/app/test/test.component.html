@@ -1,0 +1,78 @@
+<Div class="container">
+
+    <div title="String Interpolation"> 
+        <h1 class="fw-bold text-center">String Interpolation</h1>
+        <h4>Welcome {{name}}</h4>
+        <h6>{{name.toUpperCase()}}</h6>
+        <h5>{{name.length}}</h5>
+    </div><hr>
+    <div title="Property binding ">
+         <h1 class="fw-bold text-center">Property binding</h1>
+         <button [disabled]="isdisable">Click me</button><br><br>
+         <button (click)="disabled()">Enable Submit Button</button><br><br>
+
+         <h6 [style.color]="hascolor ? 'red' : 'green' ">Style binding</h6>
+    </div><hr>
+    <div>
+        <h1 class="fw-bold text-center">Event binding</h1>
+        <button (click)="show($event)" (dblclick)="show2($event)">Click</button><br>
+        {{title}}
+
+    </div><hr>
+      <div>
+        <h1 class="fw-bold text-center">Template Reference Variable</h1>
+         <input #myinput type="text">
+        <button (click)="mylog(myinput.value)">Log</button>
+    </div><hr>
+     <div>
+        <h1 class="fw-bold text-center">Two Binding</h1>
+         <input type="text" [(ngModel)]="fullname">
+        {{fullname}}
+    </div>
+     <div>
+        <h1 class="fw-bold text-center">Ng If</h1>
+        <h4 *ngIf="displayname; else elseblock">Hey Raj</h4>
+
+       <ng-template #elseblock>
+        <h3>name is hidden </h3>
+       </ng-template>
+        <button (click)="hide()">Hide or See</button>
+    </div><hr>
+    <div>
+        <h1 class="fw-bold text-center">Ng Switch</h1>
+       <div [ngSwitch]="color">
+        <div *ngSwitchCase="'red'" class="bg-danger">You Selected Red</div>
+        <div *ngSwitchCase="'black'" class="bg-black">You Selected black</div>
+        <div *ngSwitchCase="'green'" class="bg-success">You Selected green</div>
+       </div>
+       <button (click)="colorchange()">Change</button>
+    </div><hr>
+    <div>
+        <h1 class="fw-bold text-center">Ng For</h1>
+       <div *ngFor="let car of cars, index as i">
+        {{i+1}}.{{car}}
+       </div>
+    </div><hr>
+      <div>
+        <h1 class="fw-bold text-center">Angular Pipes</h1>
+        <h4>{{ name |lowercase}}</h4>
+        <h4>{{name | uppercase}}</h4>
+        <h4>{{name | titlecase}}</h4>
+        <h4>{{name | slice:3:5}}</h4>
+        <h4>{{person | json}}</h4>
+        <h4>{{0.50 | percent}}</h4>
+        <h4>{{20 |currency}}</h4>
+        <h4>{{200.00 | currency:'INR'}}</h4>
+        <h4>{{date}}</h4>
+        <h4>{{date | date :'short'}}</h4>
+        <h4>{{date | date :'shortDate'}}</h4>
+        <h4>{{date | date :'shortTime'}}</h4>
+        <h4>{{date | date :'mediumDate'}}</h4>
+        <h4>{{date | date :'mediumTime'}}</h4>
+        <h4>{{date | date :'longDate'}}</h4>
+        <h4>{{date | date :'longTime'}}</h4>
+
+    </div>
+
+
+</Div>
