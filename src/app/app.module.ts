@@ -8,6 +8,8 @@ import { FormsModule } from '@angular/forms';
 import { EmployeListComponent } from './employe-list/employe-list.component';
 import { EmployeDetailsComponent } from './employe-details/employe-details.component';
 import { EmployeeService } from './employee.service';
+import { HttpClientModule } from '@angular/common/http';
+
 
 
 @NgModule({
@@ -20,7 +22,9 @@ import { EmployeeService } from './employee.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
+    
   ],
   providers: [EmployeeService],
   bootstrap: [AppComponent]

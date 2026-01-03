@@ -1,6 +1,25 @@
 <div class="container">
 
-    <div *ngFor="let em of employees">
-        <h6>{{em.id}}.{{em.name}}-{{em.age}}-{{em.department}}</h6>
+    <div>
+       <table [border]="1" [cellPadding]="8">
+        <thead>
+            <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Company</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let emp of employees">
+                <td>{{emp.id}}</td>
+                <td>{{emp.name}}</td>
+                <td>{{emp.email}}</td>
+                <td>{{emp.phone}}</td>
+                <td>{{emp.company?.name}}</td>
+            </tr>
+        </tbody>
+       </table>
     </div>
 </div>
