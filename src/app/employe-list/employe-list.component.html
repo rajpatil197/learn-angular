@@ -2,7 +2,7 @@
 
     <ul class="items">
         <li *ngFor="let emp of employees">
-            <span class=" btn"(click)="onselect(emp.id)" >{{emp.id}}.{{emp.name}}</span>
+            <span class=" btn"(click)="onselect(emp.id)" [class.primary]="isSelected(emp.id)" >{{emp.id}}.{{emp.name}}</span>
         </li>
     </ul>
 </div>

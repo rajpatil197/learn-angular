@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { EmployeeService } from '../employee.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 
 @Component({
   selector: 'app-employe-list',
@@ -11,11 +11,18 @@ export class EmployeListComponent implements OnInit{
 
   public employees:any[] = [];
 
-  constructor(private employeeService:EmployeeService,private router:Router){}
+  selectedId:any;
+
+  constructor(private employeeService:EmployeeService,private router:Router ,private route:ActivatedRoute){}
 
   ngOnInit(): void {
    this.employeeService.getemployee().subscribe(data =>{
     this.employees = data;
+     })
+
+     this.route.paramMap.subscribe((params :ParamMap)=>{
+      let id = parseInt(params.get('id')!,10);
+      this.selectedId = id;
      })
   }
 
@@ -23,6 +30,8 @@ export class EmployeListComponent implements OnInit{
     this.router.navigate(['/employees',id]);
   }
 
-
+  isSelected(id:number):boolean{
+    return id === this.selectedId;
+  }
 
 }
