@@ -12,7 +12,32 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let emp of employees">
+            <tr *ngIf="employees">
+                <td>{{employees.id}}</td>
+                <td>{{employees.name}}</td>
+                <td>{{employees.email}}</td>
+                <td>{{employees.phone}}</td>
+                <td>{{employees.company?.name}}</td>
+            </tr>
+        </tbody>
+       </table>
+    </div>
+
+    <!-- 
+get All employees details -->
+    <!-- <div>
+       <table [border]="1" [cellPadding]="8">
+        <thead>
+            <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Company</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let emp of allemployees">
                 <td>{{emp.id}}</td>
                 <td>{{emp.name}}</td>
                 <td>{{emp.email}}</td>
@@ -21,5 +46,7 @@
             </tr>
         </tbody>
        </table>
-    </div>
+    </div>  -->
+
+
 </div>

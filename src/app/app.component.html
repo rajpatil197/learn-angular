@@ -1,11 +1,9 @@
 <div class="container">
 <br><hr>
 <h1 class="text-center">Learning Angular </h1><br>
-<hr>
+<button routerLink="/test" class="me-3 bg-danger">Test</button>
+<button routerLink="/employee-list" class="me-3 bg-success">Employee List</button>
 
+<hr>
 </div>
-<app-test></app-test><br>
-<br><br><hr>
-<h1 class="text-center fw-bold">Angular Service</h1>
-<app-employe-list></app-employe-list><br><br><hr>
-<app-employe-details></app-employe-details>
+<router-outlet></router-outlet>

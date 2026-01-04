@@ -15,4 +15,7 @@ constructor(private http: HttpClient) {}
   getemployee():Observable<any[]>{
    return this.http.get<any[]>(this.api_url);
   }
+  getemployeeById(id:number){
+    return this.http.get<any[]>(`${this.api_url}/${id}`);
+  }
 }
